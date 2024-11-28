@@ -1,0 +1,718 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Identify songs online. Upload &amp; recognize music in audio &amp; video files, submit direct URL or Youtube URL of media, or identify songs by recording online.">
+    <meta name="author" content="Identify Songs Online - Music Recognition Online">
+    <title>Identify Songs Online - Music Recognition Online</title>
+    <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="AHAMusic" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="" data-x_margin="18" data-y_margin="18"></script>
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="/css/buttons.css" rel="stylesheet">
+    
+    <link href="/css/landing-page.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/file-upload-css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/css/jquery.fileupload.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/css/jquery.fileupload-ui.min.css">
+    
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/css/jquery.fileupload-noscript.min.css"></noscript>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/css/jquery.fileupload-ui-noscript.min.css"></noscript>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery.ui.widget.min.js"></script>
+    
+    <script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+    
+    <script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    
+    <script src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.iframe-transport.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload-process.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload-image.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload-audio.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload-video.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload-validate.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload-ui.min.js"></script>
+    
+    
+    
+    <!--[if (gte IE 8)&(lt IE 10)]>
+        <script src="js/cors/jquery.xdr-transport.js"></script>
+        <![endif]-->
+    
+    
+    <script>
+            (function(d) {
+                    var e = d.createElement('script');
+                    e.src = d.location.protocol + '//tag.wknd.ai/6964/i.js';
+                    e.async = true;
+                    d.getElementsByTagName("head")[0].appendChild(e);
+            }(document));
+    </script><script src="https://tag.wknd.ai/6964/i.js" async=""></script>
+    
+    <script>
+            var WORKER_PATH = "/js/recorderWorker.js";
+        </script>
+    <script type="text/javascript" src="/js/recorder.js"> </script>
+    <script src="//assets.bounceexchange.com/assets/smart-tag/versioned/onsite-v2_abbdf7a49be9b52b097917b7b527b262.br.js" async="" type="text/javascript"></script><script src="//assets.bounceexchange.com/assets/smart-tag/versioned/ads-v2_005ab6b05ecd8ae76686b26c919990d4.br.js" async="" type="text/javascript"></script><script src="https://api.bounceexchange.com/bounce/init1.js?wklzs=625&amp;wklz=C4ewVgigvAZgrgOwMbAJYgQMhQZygRgHYAmANmP2IBYiBWQ-TYALxCgFoqAOABkwHcApgCMcqYIID6qACZRSATlJVMAJ0E4QAGzhoMBHlVoAPQqVprBMQavWqo-RwDoA5iBAutgp0hABbbABDLS1UBBdJOFUtKAALYGAABxwAUgBmAEEU4gAxbJzHfidA2MD2PzgxJB9-fNlBBDQYAE92TXCccsrUJHZ1XxcEcXQEdgxQhEF8uEStEECZfPwqJEJaQTIFWmIkGRgeLdpaYVpAlcEZLkJha8DstJm5hfYZVAA3TDfUMWBJXxAANaoQRQFKEABC2WIWkSUPSWWIxHiSVSxFomWy2zyaNyhWKpS6VRqfkxuXqjVQLTaGBcnQqVT6ggGQz0o3GYSmOJyj3miy5y1W602212+0Ox1O50u11upIes15L3ecOIAGEoao4RjEXi3B4vMS4YQACLYdxAkFgyGI1584jwqFrJRKehoqhUMikEjolXqxFfO3wohkCjUOiKSiEMGmt6BVQ4ADawkCSABMFQIUkMkECuafgawAAurBgjhBGbAcDJKAQJItHGXCCYKXy8JElA+IIklAE4XMIlgHgzX5ZqhAsgpDB6y4oJ9SlAgA" type="text/javascript" async="async"></script><link id="creativesBaseStyles" rel="stylesheet" href="//assets.bounceexchange.com/tag/css/creatives-base-styles.a53944a2.min.css" type="text/css"><script async="" type="text/javascript" src="https://static.criteo.net/js/ld/publishertag.js" id="wknd-criteo"></script></head>
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+    
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand topnav" href="https://www.aha-music.com/identify-songs-music-recognition-online">Identify Songs Online</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+    <li>
+    <a target="_blank" href="https://twitter.com/MusicIdentifier">Twitter Bot</a>
+    </li>
+    <li>
+    <a target="_blank" href="https://www.acrcloud.com">How to Develop Audio Recognition Apps</a>
+    </li>
+    <li>
+    <a target="_blank" href="https://www.acrcloud.com/music-recognition">Music Recognition Services</a>
+    </li>
+    </ul>
+    </div>
+    
+    </div>
+    
+    </nav>
+    
+    <a name="about"></a>
+    <div class="intro-header">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="intro-message">
+    <h1>Identify Songs Online</h1>
+    <h2>with Audio Fingerprinting</h2>
+    <p>100+ million music fingerprints DB with rich metadata.</p>
+    <hr class="intro-divider">
+    <ul class="list-inline intro-social-buttons">
+    <li>
+    <a href="#aha-music-div" class="btn btn-success btn-lg"><i class="fa fa-search-plus fa-fw"></i>AHA Music (Chrome Extension)</a>
+    </li>
+    
+    <li>
+    <a href="#record-div" class="btn btn-default btn-lg"><i class="fa fa-microphone fa-fw"></i> Record Now</a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    <div style="text-align: center">If you want to develop your own app with better services, please <a class="btn btn-primary" href="https://console.acrcloud.com/">Sign In</a><br><br></div>
+    <a name="services"></a>
+    <div class="content-section-a">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-2" id="chitikaAdBlock-0">
+    </div>
+    <div id="aha-music-div" class="col-lg-8 col-sm-8">
+    <div id="ads_primis_1">
+    
+    <script type="text/javascript" language="javascript" src="https://live.primis.tech/live/liveView.php?s=107412"></script>
+    
+    </div>
+    <hr class="section-heading-spacer"><div class="clearfix"></div>
+    <h2>AHA Music (Chrome Extension)</h2>
+    <blockquote>
+    <p class="lead"><a target="_blank" href="https://www.aha-music.com">AHA Music</a> is a <b>music identifier</b> on Chrome, it detects songs playing on your browser with Spotify, Deezer, Video&amp;Audio files and Youtube stream links.</p>
+    <a target="_blank" href="https://chrome.google.com/webstore/detail/aha-music-music-identifie/dpacanjfikmhoddligfbehkpomnbgblf">Install Now</a>
+    
+    </blockquote>
+    <div class="panel panel-default">
+    <div class="panel-body">
+    <ul style="font-weight: 100;">
+    <li>A chrome extension which is even smaller than a computer software.</li>
+    <li>You can even recognize songs with headphones.</li>
+    <li>It’s 100% free.</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="content-section-b">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-2" id="chitikaAdBlock-0">
+    </div>
+    <div id="upload-div" class="col-lg-8 col-sm-8">
+    <hr class="section-heading-spacer"><div class="clearfix"></div>
+    <h2>Identify Songs in File Online</h2>
+    <blockquote><p class="lead">We use ACRCloud Music Recognition Services to help you <b><a target="_blank" href="https://acr.id/identify-songs-music-recognition-online">identify songs</a></b> in audio &amp; video files, such as recordings of radio, TV, Ads.</p></blockquote>
+    <div class="panel panel-default">
+    <div class="panel-body">
+    <ul style="font-weight: 100;">
+    <li>Most audio &amp; video formats (<strong>mp3, wav, mp4, avi, flv, ...</strong>) are supported. Maximum file size is <strong>100MB</strong>.</li>
+    <li>We only try to recognize <b>the first 60 seconds</b>. Please cut your big file first.
+    <a data-toggle="modal" href="javascript:void(0);" data-target="#cutModal">
+    <i class="glyphicon glyphicon-question-sign"></i><b> How to cut audio &amp; video file. </b>
+    </a>
+    </li>
+    <li>The recognizing progress is <b>asynchronous</b>. You can <b>save the UPLOAD_ID</b> to check the result later.</li>
+    </ul>
+    </div>
+    </div>
+    
+    <form id="fileupload" action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_token" value="O4LekSkanv06BQgJTMorxn1oIAFbl5suroHZoMQl">
+    
+    
+    <div class="row">
+    <div class="col-lg-8">
+    
+    <span id="file-input-btn" class="btn btn-success fileinput-button">
+    <i class="glyphicon glyphicon-plus"></i><span> Choose a file</span>
+    <input id="file-input" type="file" name="files[]">
+    </span>
+    You can upload <code>10</code> files today.
+    </div>
+    <div class="col-lg-4" style="text-align: right">
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+    <i class="glyphicon glyphicon-search"></i> Get Result by UPLOAD_ID
+    </button>
+    </div>
+    </div>
+    <div class="alert alert-danger">UID belongs to you not found</div>
+    
+    <div class=" fileupload-progress fade">
+    
+    <div style="margin-top:10px" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+    </div>
+    
+    <div class="progress-extended">&nbsp;</div>
+    </div>
+    
+    <table role="presentation" class="table table-striped" id="upload-table">
+    <tbody class="files">
+    </tbody>
+    </table>
+    </form>
+    
+    </div>
+    
+    
+    
+    <div class="col-lg-2" id="chitikaAdBlock-1">
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    <div class="content-section-b">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div id="record-div" class="col-lg-8 col-sm-8">
+    <hr class="section-heading-spacer"><div class="clearfix"></div>
+    <h2>Recognize Music by Recording Online</h2>
+    <blockquote>
+    <p class="lead">
+    Identify songs by sound like Shazam, <a target="_blank" href="https://genius.com/">Genius</a> and <a target="_blank" href="https://www.musixmatch.com/">Musixmatch</a> ( which integrates ACRCloud Music Recognition Services ).
+    <br>Play some music and click the button to recognize songs now.
+    </p>
+    </blockquote>
+    <div class="panel panel-default">
+    <div class="panel-body">
+    <ul style="font-weight: 100;">
+    <li>Please use Chrome, Firfox or Opera and <b>allow our site to use your microphone</b>.</li>
+    <li>The recording with be submitted at <b>15 seconds</b>. You can also stop and submit the recording manually.
+    </li><li>The recognizing progress is <b>asynchronous</b>. You can <b>save the RECORD_ID</b> to check the result later.</li>
+    </ul>
+    </div>
+    </div>
+    <div class="col-lg-8">
+    You can submit <code>10</code> recordings today.
+    </div>
+    <div class="col-lg-4" style="text-align: right">
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal-rec">
+    <i class="glyphicon glyphicon-search"></i> Get Result by RECORD_ID
+    </button>
+    </div>
+    <div style="text-align: center">
+    <button style="margin-bottom:20px;width:100px;height:100px" id="record" class="button button button-glow button-circle button-action button-jumbo"><i class="fa fa-microphone"></i></button>
+    </div>
+    <div hidden="" id="message" class="alert alert-danger"></div>
+    <div class="text-center" id="result2"></div>
+    <div class="text-center" id="timeclick"></div>
+    </div>
+    
+    
+    
+    <div class="col-lg-2">
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    
+    
+    <footer>
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12">
+    <ul class="list-inline">
+    <li>
+    <a href="#">Home</a>
+    </li>
+    <li class="footer-menu-divider">⋅</li>
+    <li>
+    <a href="#about">About</a>
+    </li>
+    <li class="footer-menu-divider">⋅</li>
+    <li>
+    <a href="#services">Services</a>
+    </li>
+    <li class="footer-menu-divider">⋅</li>
+    </ul>
+    <p class="copyright text-muted small">Copyright © ACRCloud 2014-2021. All Rights Reserved</p>
+    </div>
+    </div>
+    </div>
+    </footer>
+    
+    <script id="template-upload" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+    
+        <tr class="template-upload fade">
+            <td>
+                <span class="preview"></span>
+            </td>
+            <td style="width:200px;overflow:hidden;">
+                <p class="name">{%=file.name%}</p>
+                <strong class="error text-danger"></strong>
+            </td>
+    
+            <td>
+                <p class="size">Processing...</p>
+                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+            </td>
+    
+            <td>
+                {% if (!i && !o.options.autoUpload) { %}
+                    <button class="btn btn-primary start" disabled>
+                        <i class="glyphicon glyphicon-upload"></i>
+                        <span>Start</span>
+                    </button>
+                {% } %}
+                {% if (!i) { %}
+                    <button class="btn btn-warning cancel">
+                        <i class="glyphicon glyphicon-ban-circle"></i>
+                        <span>Cancel</span>
+                    </button>
+                {% } %}
+            </td>
+        </tr>
+    {% } %}
+    </script>
+    
+    <script id="template-download" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+        <tr class="template-download fade">
+            <td>
+                <p class="name">
+                    <span>{%=file.name%}</span>
+                </p>
+                {% if (file.error) { %}
+                    <div><span class="label label-danger">Error</span> {%=file.error%}
+                    </div>
+                {% } %}
+            </td>
+            {% if(file.error) { %}
+                <td>
+                <button class="btn btn-warning cancel">
+                        <i class="glyphicon glyphicon-ban-circle"></i>
+                        <span>Cancel</span>
+                    </button></td>
+            {% } %}
+            </tr>
+       <tr>
+    {% } %}
+    </script>
+    <div id="myModal" class="modal fade">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">Get Result by UPLOAD_ID</h4>
+    </div>
+    <form action="/identify-songs-music-recognition-online/query" method="get">
+    <div class="modal-body">
+    <div class="input-group" style="width: 400px">
+    <input type="text" name="uid" placeholder="UPLOAD_ID" class="form-control">
+    </div>
+    </div>
+    <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <div id="myModal-url" class="modal fade">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">Get Result by URL_ID</h4>
+    </div>
+    <form action="/identify-songs-music-recognition-online/query-url" method="get">
+    <div class="modal-body">
+    <div class="input-group" style="width: 400px">
+    <input type="text" name="uid" placeholder="URL_ID" class="form-control">
+    </div>
+    </div>
+    <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <div id="myModal-youtube" class="modal fade">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">Get Result by Y_URL_ID</h4>
+    </div>
+    <form action="/identify-songs-music-recognition-online/query-youtube" method="get">
+    <div class="modal-body">
+    <div class="input-group" style="width: 400px">
+    <input type="text" name="uid" placeholder="Y_URL_ID" class="form-control">
+    </div>
+    </div>
+    <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <div id="myModal-rec" class="modal fade">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">Get Result by RECORD_ID</h4>
+    </div>
+    <form action="/identify-songs-music-recognition-online/query-rec" method="get">
+    <div class="modal-body">
+    <div class="input-group" style="width: 400px">
+    <input type="text" name="uid" placeholder="RECORD_ID" class="form-control">
+    </div>
+    </div>
+    <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <div id="cutModal" class="modal fade">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">How to cut audio &amp; video files</h4>
+    </div>
+    <div class="modal-body">
+    <ul>
+    <li>
+    <h4>Online Application <small>( for normal users )</small></h4>
+    <ol>
+    <li>
+    <a target="_blank" href="https://mp3cut.net">Audio Cutter</a>
+    </li>
+    <li>
+    <a target="_blank" href="https://online-video-cutter.com">Video Cutter</a>
+    </li>
+    </ol>
+    </li>
+    <li>
+    <h4>FFmpeg <small>( for users who can use shell of Window/Linux/MacOS )</small> </h4>
+    <ol>
+    <li>Install <a href="https://www.ffmpeg.org/download.html">FFmpeg</a> or download static builds.
+    </li>
+    <li>Run command:<br>
+    <small><code>ffmpeg -y -i [input] -ac 1 -ar 8000 -ss [offset] -t [duration] out.wav</code></small>
+    <br>
+    <small>Example: <br>Cut 20 seconds of input.mp4 from 00:00:30 and save it to out.wav</small><br>
+    <small><code>ffmpeg -y -i input.mp4 -ac 1 -ar 8000 -ss 00:00:30 -t 00:00:20 out.wav</code></small>
+    </li>
+    </ol>
+    </li>
+    </ul>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8c26696409b3b472&quot;,&quot;version&quot;:&quot;2024.8.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;49dcfbb53f594431901325e9c8da886a&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true}}}" crossorigin="anonymous"></script>
+    
+    <script>
+    $(function () {
+        'use strict';
+    
+        // Initialize the jQuery File Upload widget:
+        $('#fileupload').fileupload({
+            // Uncomment the following to send cross-domain cookies:
+            //xhrFields: {withCredentials: true},
+            //url: "https://www.acrcloud.com/identify-songs-music-recognition-online/upload",
+            url: "/identify-songs-music-recognition-online/upload",
+            maxFileSize: 100000000, // 100MB
+            //acceptFileTypes: /(\.|\/)(mp3|wav|mp4|flv)$/i,
+        success: function(data, status) {
+        var acr_id = data.files[0].acrid
+                    var url = "/identify-songs-music-recognition-online/upload" + '/' + acr_id+'#upload-div';
+                    window.location = url;
+        }
+        });
+    
+        if ($.support.cors) {
+            $.ajax({
+                //url: "https://www.acrcloud.com/identify-songs-music-recognition-online/upload",
+                url: "/identify-songs-music-recognition-online/upload",
+                type: 'GET'
+            }).fail(function () {
+                $('<div class="alert alert-danger"/>')
+                    .text('Upload server currently unavailable - ' +
+                    new Date())
+                    .appendTo('#fileupload');
+            });
+        }
+    
+    });
+    </script>
+    <script>
+        $('#file-input').click(function(){
+            $("#upload-table tr").remove();
+            $("#result-table tr").remove();
+                });
+                window.location.hash = "upload-div";
+        
+        
+        
+        
+    </script>
+    <script type="text/javascript">
+    
+        var onFail = function(e) {
+            console.log('Rejected!', e);
+        };
+    
+        var onSuccess = function(s) {
+            //var context = new webkitAudioContext();
+            if( !hasPri ) {
+                var context = new AudioContext();
+                var mediaStreamSource = context.createMediaStreamSource(s);
+                rec = new Recorder(mediaStreamSource);
+                hasPri = true;
+            }
+            // audio loopback
+            // mediaStreamSource.connect(context.destination);
+            if( safari ){
+                return;
+            }
+            if( !hasPri ){
+                document.getElementById('result2').innerHTML = "<strong><em>Has no authority to use your microphone.</em><strong>";
+                return;
+            }
+            if( !recording ){
+                $("#rec-table tr").remove();
+                document.getElementById('result2').innerHTML ='<strong>Recording...</strong>';
+                $('#record').addClass("active");
+                rec.record();
+                recording = true;
+                trying = true;
+                // export a wav every second, so we can send it using websockets
+                intervalKey = setTimeout(function() {
+                    rec.exportWAV(function(blob) {
+                        sendRequest( blob );
+                        stopRecording();
+                    });
+                }, 10000);
+                var secs = 10;
+                $('#timeclick').html('Auto submit in ' + secs + ' seconds.<br> Click the button to submit immediately.');
+                timeoutKey = setInterval(function(){
+                    $('#timeclick').html('Auto submit in ' + secs + ' seconds.<br> Click the button to submit immediately.' );
+                    secs--;
+                }, 1000);
+            }else{
+                rec.exportWAV(function(blob) {
+                    sendRequest( blob );
+                    stopRecording();
+                });
+            }
+        }
+    
+        var onFail = function(s){
+            document.getElementById('result2').innerHTML = "<strong>The request to record is rejected.</strong>";
+        }
+    
+        function startRecording() {
+            $('message').hide();
+            if (navigator.getUserMedia) {
+                //navigator.getUserMedia({audio: true}, onSuccess, onFail);
+            } else {
+                //console.log('navigator.getUserMedia not present');
+                document.getElementById('result2').innerHTML =
+                        "<div class=\"alert alert-danger\">Your browser doesn't support audio recording.<br>" +
+                        "Please use <em><a href=\"https://www.google.cn/chrome\">Chrome</a></em>, " +
+                        "<em><a href=\"https://www.firefox.com\">Firefox</a></em> or " +
+                        "<em><a href=\"https://www.opera.com\">Opera</a></em> instead.</strong></div>";
+                safari = true;
+            }
+        }
+    
+        function sendRequest( data ){
+            $('#record').attr('disabled','disabled');
+            $('#result2').html('Submitting...');
+            var fd = new FormData();
+            fd.append("_token","O4LekSkanv06BQgJTMorxn1oIAFbl5suroHZoMQl");
+            fd.append("fileToUpload", data );
+            var xhr = new XMLHttpRequest();
+            xhr.upload.addEventListener("progress", uploadProgress, false);
+            xhr.addEventListener("load", uploadComplete, false);
+            xhr.addEventListener("error", uploadFailed, false);
+            xhr.addEventListener("abort", uploadCanceled, false);
+            xhr.open("POST", "/identify-songs-music-recognition-online/record");
+            xhr.send(fd);
+        }
+    
+        function uploadProgress(evt) {
+    
+        }
+    
+        function uploadComplete(evt) {
+            $('#record').removeAttr('disabled');
+            $('#result2').html('');
+            //$("#message").text(evt.target.responseText);
+            console.log( 'msg:' + evt.target.responseText);
+            var result = eval( '(' + evt.target.responseText + ')');
+            if( result["error"] ) {
+                $("#message").text(result["error"]);
+                $("#message").show();
+            }else{
+                if( result['acrid'] ){
+                    //var url = "http://www.aha-music.com/identify-songs-music-recognition-online/rec" + '/' + result['acrid'] +'#upload-div';
+                    var url = "/identify-songs-music-recognition-online/rec" + '/' + result['acrid'] +'#upload-div';
+                    //var url = "http://www.aha-music.com/identify-songs-music-recognition-online/upload" + '/' + result['acrid'] + '#upload-div';
+                    console.log(url);
+                    window.location = url;
+                }
+            }
+        }
+    
+        function uploadFailed(e){
+            $('#record').removeAttr('disabled');
+            $('#result2').html('');
+            //alert("Upload Failed: " + e.target.responseText);
+        }
+    
+        function uploadCanceled(e){
+            $('#record').removeAttr('disabled');
+            $('#result2').html('');
+            //alert("Upload Canceled: " + e.target.responseText);
+        }
+    
+        //window.URL = URL || window.URL || window.webkitURL;
+        navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    
+        var rec;
+        var audio = document.querySelector('#audio');
+        var recording = false;
+        var hasPri = false;
+        var safari = false;
+        var hasres = false;
+        startRecording();
+    
+        var intervalKey;
+        var timeoutKey;
+        var trying = false;
+        //--------------------
+        $('#record').click(function() {
+            navigator.getUserMedia({audio: true}, onSuccess, onFail);
+        });
+    
+        function stopRecording(){
+            console.log('stopRecording');
+            $('#record').removeClass("active");
+            //document.getElementById('result2').innerHTML ='';
+            document.getElementById('timeclick').innerHTML ='';
+            clearInterval(intervalKey);
+            clearTimeout(timeoutKey);
+            rec.stop();
+            recording = false;
+            trying = false;
+            hasRes = false;
+        }
+    
+    </script>
+    
+    <div style="position: fixed; top: 0px; left: 0px; width: 0px; height: 0px; background: rgba(0, 0, 0, 0); text-align: center; z-index: 9999999;"><div id="bmc-close-btn" style="position: fixed; align-items: center; justify-content: center; display: flex; visibility: hidden; border-radius: 100px; width: 40px; height: 40px; top: 16px; right: 16px; z-index: 9999999;"><svg style="width: 16px;height:16px;" width="16" height="16" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.45156 27.6516L0.351562 25.5516L11.9016 14.0016L0.351562 2.45156L2.45156 0.351562L14.0016 11.9016L25.5516 0.351562L27.6516 2.45156L16.1016 14.0016L27.6516 25.5516L25.5516 27.6516L14.0016 16.1016L2.45156 27.6516Z" fill="#666"></path>
+      </svg>
+      </div><iframe id="bmc-iframe" allow="payment" title="Buy Me a Coffee" style="position: fixed; margin: 0px; border: 0px; right: 18px; bottom: 90px; height: 0px; opacity: 0; width: 420px; max-width: 420px; min-height: 645px; max-height: 645px; border-radius: 10px; box-shadow: rgba(13, 12, 34, 0.1) -6px 0px 30px; background: url(&quot;https://cdn.buymeacoffee.com/assets/img/widget/loader.svg&quot;) center center / 64px no-repeat rgb(255, 255, 255); z-index: 999999; transition: 0.25s; transform-origin: right bottom; transform: scale(0); user-select: none;"></iframe></div><div id="bmc-wbtn" style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: rgb(95, 127, 255); color: white; border-radius: 32px; position: fixed; right: 18px; bottom: 18px; box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 8px; z-index: 9999; cursor: pointer; font-weight: 600; transition: 0.25s;"><img src="https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg" alt="Buy Me A Coffee" style="height: 36px; width: 36px; margin: 0; padding: 0;"></div><div style="position: fixed; right: 102px; bottom: 16px; transform-origin: right bottom; transform: scale(0.7); opacity: 0; transition: 0.25s; visibility: hidden; background: rgb(255, 255, 255); z-index: 9999; box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 5px, rgba(0, 0, 0, 0.04) 0px 8px 40px, rgba(0, 0, 0, 0.15) 0px 0px 2px; padding: 16px; border-radius: 4px; font-size: 18px; color: rgb(13, 12, 34); width: auto; max-width: 260px; line-height: 1.5; font-family: &quot;Avenir Book&quot;, sans-serif;">Thank you for visiting. You can now buy me a coffee!</div><script src="//assets.bounceexchange.com/assets/smart-tag/versioned/runtime_c81e76ee00d795b1eebf8d27949f8dc5.br.js" async="async" onload="bouncex.initializeTag()"></script><script src="//assets.bounceexchange.com/assets/smart-tag/versioned/main-v2_82f86fd1074404c3ff981df1afeba10e.br.js" async="async"></script><iframe id="bcx_local_storage_frame" src="https://assets.bounceexchange.com/assets/bounce/local_storage_frame17.min.html#6964" title="empty" style="display: none;"></iframe><iframe width="1" height="1" src="https://js-sec.indexww.com/um/ixmatch.html" style="display: none;"></iframe><iframe width="1" height="1" src="//ads.pubmatic.com/AdServer/js/user_sync.html?p=156512" style="display: none;"></iframe><iframe width="1" height="1" src="https://eus.rubiconproject.com/usync.html?p=20986&amp;endpoint=us-east" style="display: none;"></iframe><iframe src="https://gum.criteo.com/syncframe?origin=publishertag&amp;topUrl=www.aha-music.com#{&quot;lwid&quot;:{&quot;origin&quot;:0},&quot;bundle&quot;:{&quot;value&quot;:&quot;GRT8mF9iTkRCSXhCMyUyRlRnM2U1VmY2c1dTOHZrUHU3WURLc2gxd3d4N0JFTEp5TW9YamJEYm9GOWNvekFQNXVxbW9oU3dwNyUyQlAlMkJmWCUyQld6VHNkZXppeU9DdHN5c0xTbVZBQjBBaDI4dWFFOXozQ0olMkZnd29wNHhud0JmOTBJUzExeFphb0d3a3hSUW1ubmVBcmEyJTJCRmlXS0pRJTJCNzNuYkVMYjNuMEE2c0VWVEVUeE1tTSUzRA&quot;,&quot;origin&quot;:3},&quot;optout&quot;:{&quot;value&quot;:false,&quot;origin&quot;:0},&quot;tld&quot;:&quot;aha-music.com&quot;,&quot;topUrl&quot;:&quot;www.aha-music.com&quot;,&quot;version&quot;:157,&quot;cw&quot;:true,&quot;lsw&quot;:true,&quot;origin&quot;:&quot;publishertag&quot;,&quot;requestId&quot;:&quot;0.8103086607260341&quot;}" width="0" height="0" frameborder="0" sandbox="allow-scripts allow-same-origin" title="Criteo GUM iframe" style="border-width: 0px; margin: 0px; display: none;"></iframe></body></html>

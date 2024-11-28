@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+h4 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+a {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+li {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 174, 0);
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#navigation ul li{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    list-style-type: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#navigation ul li a{
+    text-decoration: none;
+    color: rgb(26, 26, 26);
+}
+
+#landing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    margin-top: 5%;
+}
+
+#cover{
+    max-width: 80%;
+}
+
+#about{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 60%;
+    padding: 50px;
+}
+
+#about-content h1{
+    margin-bottom: 10px;
+}
+
+#about-content button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 50px;
+    background-color: rgb(255, 174, 0);
+    margin-top: 20px;
+    border: none;
+}
+
+#about-content p{
+    text-align: center;
+}
+
+#services{
+    background-color: rgb(128, 33, 33);
+    padding: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card{
+    border: 2px solid white;
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#service-card{
+    display: flex;
+}
+
+#contact{
+    border-top: 15px solid rgb(255, 174, 0);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    height: 100vh;
+}
+
+#contact h1{
+    margin: 20px;
+    
+}
+
+h1:hover{
+    letter-spacing: 10px;
+    transition: 0.8s;
+}
+
+#contact h4{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#contact h4{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#contact form{
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   
+}
+
+#contact button{
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 50px;
+    background-color: rgb(255, 174, 0);
+    margin-top: 20px;
+    border: none;
+ }
+
+ #contact input{
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    border: none;
+    height: 30px;
+ }
+
+ #contact textarea{
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    border: none;
+    height: 120px;
+ }
+
+ .card:hover{
+    background-color: white;
+    color: black;
+    transition: 0.8s;
+    cursor: pointer;
+ }

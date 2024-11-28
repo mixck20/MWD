@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML Table and Form</h1>
+    <p><em>Creating data table and using form with different types of inputs.</em></p>
+
+    <hr>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">Code</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>&lt; h1 &lt;</td>
+                <td> Heading 1-6 </td>
+                <td>Creates a strong text with large to small font size</td>
+            </tr>
+            <tr>
+                <td>&lt; p &lt;</td>
+                <td> Paragraph </td>
+                <td> Creates a simple text. </td>
+            </tr>
+            <tr>
+                <td>&lt; hr &lt;</td>
+                <td> Horizontal Rule </td>
+                <td> Adds horizontal line with margin on top and bottom </td>
+            </tr>
+            <tr>
+                <td>&lt; br &lt;</td>
+                <td> Break </td>
+                <td> Breaks the line with a text. </td>
+            </tr>
+            <tr>
+                <td>&lt; strong &lt;</td>
+                <td> Strong Front </td>
+                <td> Adds importance to the text. </td>
+            </tr>
+            <tr>
+                <td>&lt; em &lt;</td>
+                <td> Emphasis </td>
+                <td> Emphasizing text or Italizing content. </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td align="center" colspan="3"> <em>Basic HTML codes</em> </td>
+            </tr>
+        </tfoot>
+    </table>
+</head>
+<body>
+    
+    <hr>
+
+    <h2>Registration Form</h2>
+    <p>Please input correct details</p>
+
+    <br>
+
+    <form action="https://www.google.com">
+        <label for="fname">First Name</label> <br>
+        <input type="text" id="fname" name="fname" required> <br>
+
+        <label for="lname">Last Name</label> <br>
+        <input type="text" id="lname" name="lname"> <br>
+
+        <label for="email">Email</label> <br>
+        <input type="email" id="email" name="email"> <br>
+
+        <label for="pass">Password</label> <br>
+        <input type="password" id="pass" name="pass"> <br>
+
+        <label for="number">Contact Number</label> <br>
+        <input type="number" id="number" name="number"> <br>
+
+        <label for="dob">Date of Birth</label> <br>
+        <input type="number" id="dob" name="dob"> <br>
+
+        <label for="gender">Select a gender</label>
+        <select name="gender" id="gender">
+            <option value="">---Select---</option>
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+            <option value="o">Others</option>
+        </select> <br>
+
+        <label for="">Technologies I Use</label>
+        <input type="checkbox"> <label for="">Git</label><br>
+        <input type="checkbox"> <label for="">HTML</label><br>
+        <input type="checkbox"> <label for="">CSS</label><br>
+        <input type="checkbox"> <label for="">JS</label><br>
+        <input type="checkbox"> <label for="">Bootstrap</label><br>
+
+        <input type="checkbox"> <label for="">Express</label><br>
+        <input type="checkbox"> <label for="">React</label><br>
+        <input type="checkbox"> <label for="">Others</label><br>
+
+        <label for="notes">Notes</label> <br>
+        <textarea name="notes" id="notes" rows="10"></textarea>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+
+
+    </form>
+
+</body>
+</html>
